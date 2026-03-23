@@ -1,0 +1,84 @@
+---
+title: 'Knowledge Base'
+description: 'Add documents, URLs, and text for your agents to reference'
+icon: 'book-open'
+---
+
+The Knowledge Base is where you manage all the content your agents use to answer questions. Organize sources into folders and keep them up to date so your agents always have accurate information.
+
+## Overview
+
+The Knowledge Base page shows two sections:
+
+- **Folders** — groups of documents you've organized together
+- **All Documents** — a full list of every source across all folders, with columns for Name, Type, Folder, Size, Status, and Added date
+
+Each document shows an **Indexed** status once it has been processed and is ready for agents to use.
+
+Use the search bar to quickly find a specific document or folder.
+
+---
+
+## Folders
+
+Folders help you organize sources by topic, agent, or team. Each folder card shows the folder name and the number of documents inside.
+
+### Create a Folder
+
+Click **New Folder** in the top right. Enter a folder name (letters, numbers, spaces, underscores, and hyphens only — max 50 characters) and click **Create Folder**.
+
+---
+
+## Adding Sources
+
+Click **+ Add Source** to open the source picker. Choose how you want to add content:
+
+<CardGroup cols={3}>
+  <Card title="Text Content" icon="file-lines">
+    Paste text directly into the knowledge base.
+  </Card>
+  <Card title="Website" icon="globe">
+    Add a single page or crawl an entire site.
+  </Card>
+  <Card title="Upload File" icon="arrow-up-from-bracket">
+    Upload a file from your computer. Supported formats: PDF, DOCX, TXT, MD, CSV, JSON (max 50MB each).
+  </Card>
+</CardGroup>
+
+### Add a Website
+
+1. Select **Website** from the source picker
+2. Choose a folder to save it to (default: Root)
+3. Enter a **Name** and the **Website URL**
+4. Toggle **Crawl entire site** on to index all pages, or leave it off to index only the single page
+5. Click **Add Page**
+
+### Upload a File
+
+1. Select **Upload File** from the source picker
+2. Choose a folder to save it to (default: Root)
+3. Drop files into the upload area or click to browse
+4. Click **Upload & Process**
+
+Supported formats: `PDF`, `DOCX`, `TXT`, `MD`, `CSV`, `JSON` — max 50MB per file.
+
+---
+
+## Managing Documents
+
+Click the **⋯** menu on any document row to access actions:
+
+- **Move to Folder** — organize the document into a different folder
+- **Delete** — permanently remove the document from the knowledge base
+
+<Warning>Deleting a document removes it from all agents that reference it. This cannot be undone.</Warning>
+
+---
+
+## Document Status
+
+| Status | Meaning |
+|--------|---------|
+| **Indexed** | Document has been processed and is available for agents to use |
+| **Processing** | Document is being indexed — check back shortly |
+| **Failed** | Indexing failed — try re-uploading or re-adding the source |

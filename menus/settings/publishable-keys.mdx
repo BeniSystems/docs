@@ -1,0 +1,61 @@
+---
+title: 'Publishable Keys'
+description: 'Browser-safe keys for widget embedding with allowed domain restrictions'
+icon: 'key'
+---
+
+Publishable keys are used to authenticate your chat widget when embedding it on your website. They are safe to use in frontend script tags and can be restricted to specific domains.
+
+<Info>Publishable keys can be used in frontend script tags. Restrict each key to specific domains and rotate regularly.</Info>
+
+## Key List
+
+The table shows all active publishable keys with:
+
+| Column | Description |
+|--------|-------------|
+| **Label** | A name to identify the key (e.g. `Website Production`) |
+| **Key** | The key value — partially masked for security |
+| **Domains** | The allowed domains this key is restricted to |
+| **Expires** | The key's expiration date, or `Never` if it doesn't expire |
+| **Actions** | Edit allowed domains, rotate, or delete the key |
+
+---
+
+## Creating a Publishable Key
+
+Click **+ Create Publishable Key** and fill in the form:
+
+| Field | Description |
+|-------|-------------|
+| **Label** | A descriptive name for the key. e.g. `Website Production` |
+| **Allowed Domains** | Domains where this key can be used. Enter one domain per line or comma-separated. e.g. `https://example.com` |
+| **Expiration** | Choose: `Never`, `7 days`, `30 days`, `60 days`, `90 days`, or `1 year` |
+
+Click **Create Key** to generate the key.
+
+### Copy Your Key Immediately
+
+After creation, a confirmation dialog shows your full publishable key.
+
+<Warning>Copy this key now — you will not be able to view it again. If you lose it, you will need to create a new key.</Warning>
+
+---
+
+## Managing Keys
+
+Click the **⋯** actions on any key row:
+
+- **Edit** — Update the allowed domains for the key
+- **Rotate** — Generate a new key value while keeping the same label and settings. The old key is immediately revoked.
+- **Delete** — Permanently remove the key
+
+### Editing Allowed Domains
+
+Click the edit icon to open the **Edit Allowed Domains** dialog. Update the domain list and click **Save Changes**.
+
+---
+
+## Revoked Keys
+
+The **Revoked Publishable Keys** section at the bottom of the page shows a history of all revoked keys, including who revoked them and when. You can delete individual entries or use **Clear All** to remove the entire history.

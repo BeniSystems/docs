@@ -1,0 +1,167 @@
+---
+title: 'Tools & Integrations'
+description: 'Create custom tools and connect third-party apps to extend your agents capabilities'
+icon: 'grid-2-plus'
+---
+
+Tools give your agents the ability to take actions — look up data, submit forms, book appointments, and more — by calling external APIs during a conversation.
+
+## Overview
+
+The Tools & Integrations page is split into two tabs:
+
+- **Tools** — API tools your agents can call during conversations
+- **Integrations** — third-party app connections <span style={{ background: '#FEF3C7', color: '#92400E', fontSize: '12px', padding: '2px 8px', borderRadius: '999px', marginLeft: '6px' }}>Coming Soon</span>
+
+The Tools tab shows four summary metrics:
+
+| Metric | Description |
+|--------|-------------|
+| **Total Tools** | Total number of tools created |
+| **Active** | Tools currently enabled and available to agents |
+| **Webhooks** | Webhook-based tools (Coming Soon) |
+| **APIs** | API tools currently configured |
+
+<Info>Your plan includes a set number of tools. The banner at the top of the page shows how many you have used out of your plan limit.</Info>
+
+---
+
+## API Tools
+
+API tools let your agents call any external HTTP endpoint. When the agent decides a tool is needed, it calls the configured endpoint with the appropriate parameters and uses the response to continue the conversation.
+
+### Tool List
+
+Each tool in the list shows:
+
+- **Name** and description
+- **Configuration summary** — number of params, auth type, timeout, retries
+- **Method** — `GET`, `POST`, `PUT`, `DELETE`, or `PATCH`
+- **Status** — Active or Paused
+- **Agents** — how many agents are currently using this tool
+- **Usage** — number of calls made and when it was last used
+
+### Tool Actions
+
+Each tool row has a set of action icons:
+
+| Icon | Action |
+|------|--------|
+| Pause | Temporarily disable the tool without deleting it |
+| Edit | Modify the tool configuration |
+| Thunder | Test / dry-run the tool manually |
+| Clock | View invocation history |
+| Duplicate | Clone the tool as a starting point for a new one |
+| Delete | Permanently remove the tool |
+
+---
+
+## Creating an API Tool
+
+Click **New API Tool** to open the creation form.
+
+### Basic Information
+
+| Field | Description |
+|-------|-------------|
+| **Tool Name** | A unique identifier for the tool. Use letters, numbers, underscores, and hyphens only. e.g. `get_order_status` |
+| **Description** | Explain what the tool does and when the AI should use it. Be specific — this guides the agent's decision to invoke the tool. |
+
+### API Configuration
+
+| Field | Description |
+|-------|-------------|
+| **Method** | The HTTP method: `GET`, `POST`, `PUT`, `DELETE`, or `PATCH` |
+| **Endpoint URL** | The full URL of the API endpoint e.g. `https://api.example.com/v1/resource` |
+
+**Method hints:**
+
+<AccordionGroup>
+  <Accordion title="GET — Retrieve data">
+    Use for fetching data without modifying server state. Parameters can be sent as URL path segments or query strings.
+    - Path params: `/orders/{orderId}` — use `{paramName}` in URL
+    - Query params: `/orders?id=123` — appended automatically
+  </Accordion>
+  <Accordion title="POST — Create or submit data">
+    Use for creating resources or submitting data. Parameters are sent in the request body as JSON.
+  </Accordion>
+  <Accordion title="PUT / PATCH — Update data">
+    Use for updating existing resources. PUT replaces the resource; PATCH applies partial updates.
+  </Accordion>
+  <Accordion title="DELETE — Remove data">
+    Use for deleting a resource. Parameters are typically sent as path segments.
+  </Accordion>
+</AccordionGroup>
+
+### Parameters
+
+Define the inputs the agent can pass to this tool. Click **+ Add Parameter** to add one. Each parameter has the following fields:
+
+| Field | Description |
+|-------|-------------|
+| **Name** | The parameter key sent to the API. e.g. `orderId` |
+| **Type** | The data type: `String`, `Number`, `Boolean`, `Array`, or `Object` |
+| **Description** | Describe the parameter in detail — include format requirements, valid values, examples, and any constraints the AI should know about |
+| **Required** | Check this if the agent must collect this value before calling the tool |
+
+Parameters tell the agent what information it needs to collect from the conversation before making the API call.
+
+### Authentication
+
+Choose how the tool authenticates with the external API:
+
+| Option | Description |
+|--------|-------------|
+| **None** | No authentication required |
+| **API Key** | Sends an API key in the request header or query string |
+| **Bearer Token** | Sends a Bearer token in the Authorization header |
+| **Basic Auth** | Sends a Base64-encoded username and password |
+
+### Custom Headers
+
+Add any additional HTTP headers required by the API using **+ Add Header**.
+
+### Advanced Settings
+
+| Setting | Default | Range | Description |
+|---------|---------|-------|-------------|
+| **Timeout (ms)** | 30,000 | 1,000 – 120,000 | How long to wait for the API to respond before timing out |
+| **Retry Count** | 0 | 0 – 5 | How many times to retry the call on failure |
+
+Click **Create Tool** to save.
+
+---
+
+## Invocation History
+
+Click the **clock icon** on any tool to view its invocation history — a full log of every time an agent called that tool.
+
+### Summary Metrics
+
+| Metric | Description |
+|--------|-------------|
+| **Total Shown** | Number of invocations displayed |
+| **Successful** | Calls that completed without error (shown in green) |
+| **Errors** | Failed calls (shown in red) |
+| **Avg Duration** | Average response time across all shown invocations |
+
+### Log Details
+
+Each row in the log shows the status, HTTP response code, duration, any error message, and the time of the call.
+
+Click a row to expand it and view the full details:
+
+- **Timestamp** — exact date and time of the call
+- **Conversation** — the conversation ID that triggered the tool
+- **Request Payload** — the JSON sent to the API
+- **Response Payload** — the JSON returned by the API
+
+---
+
+## Webhooks
+
+Webhook-based tools are **coming soon**. They will allow external systems to push data into your agents in real time.
+
+## Integrations
+
+Native third-party integrations are **coming soon**. They will provide pre-built connections to tools like Salesforce, HubSpot, Zendesk, and calendar systems.

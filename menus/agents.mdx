@@ -1,0 +1,109 @@
+---
+title: 'Agents'
+description: 'Build and deploy AI agents to deliver exceptional customer experiences'
+icon: 'robot'
+---
+
+Agents are the core of Beni. Each agent is an AI assistant you configure to handle customer conversations across chat, voice, and SMS.
+
+## Agent List
+
+The Agents page shows all agents in your workspace. Each agent card displays:
+
+- **Name** and description
+- **Status** — `Active` or inactive
+- **Last Active** — when the agent last handled a conversation
+
+Use the **+ New Agent** button in the top right to create a new agent. If you have no agents yet, you'll see an empty state prompting you to create your first one.
+
+---
+
+## Creating an Agent
+
+Click **+ New Agent** to open the multi-step agent creation wizard. Move through each step using the **Previous** and **Next** buttons, or jump to any step using the sidebar.
+
+### Step 1 — Basic Info
+
+Set up the core identity of your agent.
+
+| Field | Description |
+|-------|-------------|
+| **Agent Name** | Visible to your team. e.g. `Inbound Support`, `Sales Qualifier` |
+| **Description** | A brief summary of what this agent does |
+| **Language** | The language the agent will communicate in (default: English) |
+| **Active Status** | Toggle to enable or disable the agent |
+
+### Step 2 — Prompts
+
+Define how your agent communicates using a **System Prompt** — this sets the agent's personality, role, and behavioral guidelines.
+
+A default prompt is provided to get you started. Use **Reset to default** to restore it at any time.
+
+<Tip>Keep system prompt instructions concise, especially if you plan to use the agent for voice conversations.</Tip>
+
+### Step 3 — Intelligence
+
+Choose the LLM configuration that powers your agent.
+
+- **Automatic Model Selection** — Beni selects the best AI model for optimal performance and cost efficiency
+- **Temperature** — Controls response style on a scale from `More precise` (0) to `More creative` (1.0)
+
+<Info>Lower values (0–0.3) make responses more focused and deterministic. Higher values (0.7–1.0) make responses more diverse and creative. For conversational agents, we recommend 0.3–0.5 for consistency.</Info>
+
+### Step 4 — Knowledge Base
+
+Select the documents your agent can reference when answering questions. Browse folders and files from your Knowledge Base, or use **+ Manage** to add new documents.
+
+### Step 5 — Tools & Action
+
+Give your agent the ability to perform actions and access external systems. Use **+ Manage Tools** to create and configure tools, then assign them to this agent.
+
+### Step 6 — Chat Widget
+
+Customize the chat widget that appears on your website.
+
+| Field | Description |
+|-------|-------------|
+| **Display Name** | Name shown in the chat widget header. Leave empty to use the agent name |
+| **Primary Color** | Brand color for the widget (hex code) |
+| **Chat Widget First Message** | Greeting shown when the widget opens |
+| **Bubble Text** | Text shown on the chat bubble before the user opens it |
+
+A live **Preview** updates as you make changes.
+
+### Step 7 — Voice & Speech <span style={{ background: '#F3F4F6', color: '#6B7280', fontSize: '12px', padding: '2px 8px', borderRadius: '999px', marginLeft: '6px' }}>Soon</span>
+
+Configure voice provider and TTS/STT settings for voice-enabled agents.
+
+<Info>Voice AI capability is coming soon. Stay tuned for updates.</Info>
+
+### Step 8 — Phone Numbers <span style={{ background: '#F3F4F6', color: '#6B7280', fontSize: '12px', padding: '2px 8px', borderRadius: '999px', marginLeft: '6px' }}>Soon</span>
+
+Assign phone numbers to your agent for SMS and voice call handling.
+
+<Info>Phone number assignment is coming soon.</Info>
+
+---
+
+## Updating an Agent
+
+To edit an existing agent, click on it from the Agents list. The configuration steps are the same as creation with one addition in the Chat Widget step:
+
+### Embed Code
+
+Once your agent is created, an **Embed Code** section appears in the Chat Widget step. Add this script to your website to display the chat widget.
+
+```html
+<script
+  src="https://widget.trybeni.ai/widget/v0/beni.iife.js"
+  data-agent-id="YOUR_AGENT_ID"
+  data-publishable-key="YOUR_PUBLISHABLE_KEY"
+  defer
+></script>
+```
+
+Place this script tag just before the closing `</body>` tag of your HTML.
+
+<Info>Replace `YOUR_PUBLISHABLE_KEY` with a publishable key from **Settings → Publishable Keys**. Publishable keys are safe to use in frontend code and can be restricted to specific domains.</Info>
+
+When you're done making changes, click **Update Agent** to save.

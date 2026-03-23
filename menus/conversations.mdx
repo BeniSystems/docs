@@ -1,0 +1,104 @@
+---
+title: 'Conversations'
+description: 'Monitor and review conversations across your agents'
+icon: 'message'
+---
+
+The Conversations page gives you full visibility into every interaction your agents have with visitors. Review transcripts, monitor leads, join live conversations, and manage conversation details — all from one place.
+
+## Conversation List
+
+Each row in the list shows:
+
+- **Visitor** — the person who started the conversation
+- **Agent** — the Beni agent that handled it (shown as a purple link)
+- **Status** — the current state of the conversation
+- **Lead Type** — the lead temperature assigned by the agent
+- **Last message preview** — a snippet of the most recent message
+- **Time** — how long ago the conversation was active
+- **Star** — bookmark important conversations for quick access
+
+Conversations are paginated. Use the **Per page** selector to control how many appear per page, and **Previous / Next** to navigate.
+
+### Filtering
+
+Use the filter bar at the top to narrow down conversations:
+
+| Filter | Options |
+|--------|---------|
+| **Search** | Find conversations by keyword |
+| **Status** | All Status, Active, Waiting, Resolved, Abandoned |
+| **Lead Type** | All Lead Types, Hot, Warm, Cold |
+| **Priority** | All Priorities |
+
+### Conversation Status
+
+| Status | Meaning |
+|--------|---------|
+| **Active** | Conversation is ongoing — agent or human is engaged |
+| **Waiting** | Visitor is waiting for a response |
+| **Resolved** | Conversation was successfully closed |
+| **Abandoned** | Visitor left before the conversation was resolved |
+
+### Lead Types
+
+| Type | Meaning |
+|------|---------|
+| `Hot` | High intent — visitor showed strong interest or asked about pricing/booking |
+| `Warm` | Moderate interest — engaged but not yet ready to convert |
+| `Cold` | Low intent — minimal engagement |
+
+---
+
+## Conversation Detail
+
+Click any conversation to open it in a split-panel view:
+
+- **Left** — the conversation list (stays visible for quick switching)
+- **Center** — the full chat transcript
+- **Right** — conversation details panel
+
+### Chat Transcript
+
+The center panel shows the full conversation thread between the visitor and the agent, including timestamps for each message.
+
+### Joining a Conversation
+
+If a conversation is **Active** or **Waiting**, a human agent or admin can type a reply in the input box and click **Send** to join the conversation.
+
+<Info>Replies are only enabled for Active or Waiting conversations. Resolved and Abandoned conversations are read-only.</Info>
+
+---
+
+## Managing Conversations
+
+### Starring
+
+Click the **star icon** in the conversation header or list row to bookmark a conversation. Starred conversations are easy to find when filtering or reviewing important leads.
+
+### Tags
+
+In the **Details** panel on the right, click **+** next to **TAGS** to add tags to a conversation (e.g. `hot-lead`, `follow-up`, `bug-report`). Tags help you categorize and search conversations later.
+
+### Stats
+
+The Details panel also shows conversation statistics:
+
+| Stat | Description |
+|------|-------------|
+| **Messages** | Total number of messages exchanged |
+| **Tool Calls** | Number of tool or API calls the agent made during the conversation |
+
+### Lead Summary
+
+The **LEAD** section in the Details panel shows the lead type, category (e.g. `Quote`, `Support`), and an AI-generated summary of why the lead was classified that way — giving you quick context without reading the full transcript.
+
+It also surfaces any **contact signals** captured during the conversation:
+
+| Signal | Description |
+|--------|-------------|
+| **Name** | Visitor's name if they introduced themselves or it was captured by the agent |
+| **Email** | Email address if the visitor provided it |
+| **Phone** | Phone number if shared during the conversation |
+
+<Info>Contact signals are captured automatically when a visitor provides their details. Agents can be prompted to collect this information through their system instructions.</Info>

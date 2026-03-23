@@ -1,0 +1,67 @@
+---
+title: 'Members'
+description: 'Manage team members, invitations, and roles'
+icon: 'users'
+---
+
+The Members page lets you invite teammates to your workspace and manage their roles and access.
+
+The **Seats** counter in the top right shows how many seats are used out of your plan's limit (e.g. `3 / 5`). The number of available seats varies by plan.
+
+## Member List
+
+The table shows all current members and pending invitations with the following columns:
+
+| Column | Description |
+|--------|-------------|
+| **Name** | Member's display name |
+| **Email** | Member's email address |
+| **Role** | `Owner`, `Admin`, or `Member` |
+| **Status** | `Active`, `Deactivated`, or `Invitation Sent` |
+| **Actions** | Context menu with available actions for that member |
+
+---
+
+## Roles
+
+| Role | Description |
+|------|-------------|
+| **Owner** | Full control over the workspace including billing and settings. Each organization has exactly one Owner. |
+| **Admin** | Can manage agents, knowledge base, tools, and members. |
+| **Member** | Standard access to workspace features based on permissions. |
+
+<Info>Each organization can only have one Owner. The Owner account cannot be deactivated.</Info>
+
+---
+
+## Inviting a Member
+
+Click **Invite Member** to open the invitation form.
+
+| Field | Description |
+|-------|-------------|
+| **Name** | The person's name |
+| **Email** | The email address the invitation will be sent to |
+| **Role** | Select `Admin` or `Member` |
+
+Click **Send Invitation** to send. The member will appear in the list with an **Invitation Sent** status until they accept.
+
+---
+
+## Member Actions
+
+Click the **⋯** menu on any member row to see available actions. Actions vary based on the member's current status:
+
+### Active members
+- **Edit** — Change the member's role. Other profile fields will be editable soon.
+- **Deactivate** — Disable the member's access to the workspace.
+
+### Deactivated members
+- **Edit** — Change the member's role.
+- **Reactivate** — Restore the member's access.
+
+### Pending invitations
+- **Resend** — Send the invitation email again.
+- **Cancel Invite** — Revoke the invitation.
+
+<Warning>The Owner account cannot be deactivated.</Warning>
