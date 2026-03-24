@@ -8,17 +8,14 @@ The Conversations page gives you full visibility into every interaction your age
 
 ## Conversation List
 
-Each row in the list shows:
+The left panel lists all conversations. Each row shows:
 
-- **Visitor** — the person who started the conversation
-- **Agent** — the Beni agent that handled it (shown as a purple link)
-- **Status** — the current state of the conversation
-- **Lead Type** — the lead temperature assigned by the agent
-- **Last message preview** — a snippet of the most recent message
-- **Time** — how long ago the conversation was active
+- **Visitor name** — the person who started the conversation
+- **Last message preview** — a snippet of the most recent message, prefixed with who sent it (e.g. `Agent:` or `Support:`)
+- **Time** — how long ago the conversation was last active
 - **Star** — bookmark important conversations for quick access
 
-Conversations are paginated. Use the **Per page** selector to control how many appear per page, and **Previous / Next** to navigate.
+Conversations are paginated. Use the **Per page** selector (top right) to control how many appear per page, and **Previous / Next** to navigate.
 
 ### Filtering
 
@@ -52,53 +49,56 @@ Use the filter bar at the top to narrow down conversations:
 
 ## Conversation Detail
 
-Click any conversation to open it in a split-panel view:
+Click any conversation to open it in a three-panel view:
 
 - **Left** — the conversation list (stays visible for quick switching)
-- **Center** — the full chat transcript
-- **Right** — conversation details panel
+- **Center** — the full chat transcript and reply area
+- **Right** — the Conversation Info panel
 
 ### Chat Transcript
 
-The center panel shows the full conversation thread between the visitor and the agent, including timestamps for each message.
+The center panel shows the full conversation thread between the visitor and the agent, with timestamps on each message. Visitor messages appear as dark bubbles on the left, and agent responses appear as lighter bubbles on the right.
+
+### Resolving a Conversation
+
+When a conversation is **Active**, a green **Resolve** button appears in the conversation header. Click it to mark the conversation as resolved and close it.
 
 ### Joining a Conversation
 
-If a conversation is **Active** or **Waiting**, a human agent or admin can type a reply in the input box and click **Send** to join the conversation.
+If a conversation is **Active** or **Waiting**, you can reply directly from the **Reply as Support Agent** input at the bottom of the transcript. Type your message and press **Enter** to send, or **Shift+Enter** for a new line.
 
-<Info>Replies are only enabled for Active or Waiting conversations. Resolved and Abandoned conversations are read-only.</Info>
+<Info>Replies are only available for Active or Waiting conversations. Resolved and Abandoned conversations are read-only — a notice will appear at the bottom of the transcript.</Info>
 
 ---
 
-## Managing Conversations
+## Conversation Info Panel
 
-### Starring
+The right panel shows metadata and context for the selected conversation.
 
-Click the **star icon** in the conversation header or list row to bookmark a conversation. Starred conversations are easy to find when filtering or reviewing important leads.
+### Details
+
+| Field | Description |
+|-------|-------------|
+| **Agent** | The Beni agent that handled the conversation |
+| **# Messages** | Total number of messages exchanged |
+| **Started** | Date and time the conversation began |
+| **Ended** | Date and time the conversation ended (shown for resolved conversations) |
+
+### AI Summary
+
+Once enough context is available, an AI-generated summary of the conversation will appear here. For new or short conversations it will show *No summary available yet.*
 
 ### Tags
 
-In the **Details** panel on the right, click **+** next to **TAGS** to add tags to a conversation (e.g. `hot-lead`, `follow-up`, `bug-report`). Tags help you categorize and search conversations later.
+Click **+ Add** to tag a conversation (e.g. `hot-lead`, `follow-up`, `bug-report`). Tags appear as pills and help you categorize and search conversations.
 
-### Stats
+### Lead Info
 
-The Details panel also shows conversation statistics:
+If the agent identified the visitor as a lead, their details appear here:
 
-| Stat | Description |
-|------|-------------|
-| **Messages** | Total number of messages exchanged |
-| **Tool Calls** | Number of tool or API calls the agent made during the conversation |
+- **Name** — visitor's name, along with their lead temperature and category tags
+- **Email** — email address if captured during the conversation
+- **Phone** — phone number if shared during the conversation
+- **View Lead Profile** — opens the full lead profile page
 
-### Lead Summary
-
-The **LEAD** section in the Details panel shows the lead type, category (e.g. `Quote`, `Support`), and an AI-generated summary of why the lead was classified that way — giving you quick context without reading the full transcript.
-
-It also surfaces any **contact signals** captured during the conversation:
-
-| Signal | Description |
-|--------|-------------|
-| **Name** | Visitor's name if they introduced themselves or it was captured by the agent |
-| **Email** | Email address if the visitor provided it |
-| **Phone** | Phone number if shared during the conversation |
-
-<Info>Contact signals are captured automatically when a visitor provides their details. Agents can be prompted to collect this information through their system instructions.</Info>
+<Info>Contact details are captured automatically when a visitor provides them. You can prompt agents to collect this information through their system instructions.</Info>
