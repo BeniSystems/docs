@@ -24,6 +24,7 @@
               "menus/agents",
               "menus/knowledge-base",
               "menus/conversations",
+              "menus/leads",
               "menus/tools-and-integrations",
               {
                 "group": "Settings",
