@@ -15,7 +15,18 @@
         "groups": [
           {
             "group": "Getting started",
-            "pages": ["index", "best-practices"]
+            "pages": [
+              "index",
+              {
+                "group": "Best Practices",
+                "pages": [
+                  "best-practices/system-prompt",
+                  "best-practices/agents",
+                  "best-practices/knowledge-base",
+                  "best-practices/security"
+                ]
+              }
+            ]
           },
           {
             "group": "Full Documentation",

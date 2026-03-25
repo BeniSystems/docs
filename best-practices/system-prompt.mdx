@@ -1,0 +1,321 @@
+---
+title: "System Prompt"
+description: "Learn how to write effective system prompts that make your Beni AI agent sound, behave, and respond exactly the way you want."
+icon: "message-bot"
+---
+
+## What Is a System Prompt?
+
+Think of the system prompt as a training manual you hand your AI agent before their first shift. It tells the agent who they are, what your business does, how to talk to customers, and what to do (or not do) in different situations.
+
+A well-written system prompt is the difference between an agent that feels like a helpful team member and one that feels like a random chatbot.
+
+You do not need any technical skills to write a good one. If you can describe what a great employee at your business sounds like, you can write a great system prompt.
+
+---
+
+## The Building Blocks
+
+Every effective system prompt covers these areas. You do not need to write an essay for each one. A few clear sentences per section is usually enough.
+
+### 1. Identity and Personality
+
+Tell the agent who they are and how they should come across.
+
+<Tabs>
+  <Tab title="Good Example">
+    ```
+    You are Mia, a friendly and knowledgeable customer support
+    assistant for Greenleaf Dental. You are warm, patient, and
+    professional. You speak in a conversational tone, like a
+    helpful receptionist, not a robot.
+    ```
+  </Tab>
+  <Tab title="Weak Example">
+    ```
+    You are a helpful assistant.
+    ```
+  </Tab>
+</Tabs>
+
+**Why it matters:** Without a clear identity, the agent defaults to a generic, bland tone that does not reflect your brand. Giving it a name, a role, and a personality makes every response feel intentional.
+
+<Tip>
+Pick a tone that matches how your best employee talks to customers. If your brand is casual and fun, say that. If you run a law firm, tell the agent to be professional and precise.
+</Tip>
+
+### 2. Business Context
+
+Give the agent the essential facts about your business. Think about what a new hire would need on their first day.
+
+```
+Greenleaf Dental is a family dental practice in Burlington, Ontario.
+We are open Monday to Friday, 8 AM to 6 PM, and Saturdays 9 AM to 2 PM.
+We are closed on Sundays and statutory holidays.
+
+Services: cleanings, fillings, crowns, teeth whitening, Invisalign,
+emergency dental care, and pediatric dentistry.
+
+We accept most major insurance providers. Patients should bring their
+insurance card to their first visit.
+
+Address: 123 Lakeshore Rd, Burlington, ON L7R 1A2
+Phone: (905) 555-0123
+```
+
+<Note>
+You do not need to put every detail here. Your knowledge base handles the deep information like service descriptions and pricing tables. The system prompt is for the essentials the agent should always have top of mind.
+</Note>
+
+### 3. Conversation Goals
+
+Tell the agent what you actually want it to accomplish. Without clear goals, the agent will just answer questions passively instead of guiding conversations toward outcomes that help your business.
+
+```
+Your primary goals in every conversation are:
+1. Answer the customer's question clearly and accurately
+2. If they are a new patient, collect their name, phone number,
+   and the reason for their visit
+3. Offer to book an appointment whenever it makes sense
+4. If you cannot help, offer to connect them with our front desk team
+```
+
+<Tip>
+Be specific about what "success" looks like. "Be helpful" is vague. "Collect their name and email, then offer to book a demo" is actionable.
+</Tip>
+
+### 4. Boundaries and Guardrails
+
+This is the section most business owners skip, and it is the one that prevents the most problems. Tell the agent what it should never do.
+
+```
+Rules you must always follow:
+- Never make up information. If you do not know the answer, say so
+  and offer to connect the customer with our team.
+- Never discuss other dental practices or competitors.
+- Never provide specific medical advice or diagnoses. You can share
+  general information about procedures, but always recommend they
+  consult with our dentist.
+- Never offer discounts, price matches, or special deals unless
+  specifically listed in your knowledge base.
+- Never share internal business information like staff schedules,
+  revenue, or operational details.
+- Keep responses concise. Aim for 2-3 sentences unless the customer
+  asks for more detail.
+```
+
+<Warning>
+If you skip this section, the agent will try its best to be helpful, which sometimes means guessing, overpromising, or going off-script. A few clear "never do this" rules save you from awkward situations down the road.
+</Warning>
+
+### 5. Escalation Rules
+
+Tell the agent when to stop trying and hand off to a human. No AI agent should handle every situation, and your customers will appreciate a smooth handoff when it is needed.
+
+```
+Transfer the conversation to a human team member when:
+- The customer explicitly asks to speak with a person
+- The customer is upset, frustrated, or uses aggressive language
+- The question involves billing disputes or insurance claim issues
+- You have been asked the same question twice and the customer
+  is not satisfied with your answer
+- The conversation involves a medical emergency (also tell them
+  to call 911 if it sounds urgent)
+```
+
+<Tip>
+Think about the last five times a customer interaction went sideways at your business. What triggered it? Those triggers belong in your escalation rules.
+</Tip>
+
+### 6. Response Style
+
+Fine-tune how the agent communicates. These small details shape how natural the conversation feels.
+
+```
+Style guidelines:
+- Use the customer's first name after they share it
+- Keep responses to 1-3 sentences unless they ask for detail
+- Use plain language, avoid jargon
+- Do not use emojis
+- If the customer writes in French, respond in French
+- Always end with a clear next step or question to keep
+  the conversation moving
+```
+
+### 7. Example Conversations
+
+This is the most powerful section of your system prompt. Examples teach the agent by showing, not just telling. Include 3-5 exchanges that represent your ideal interactions.
+
+```
+Example conversations:
+
+Customer: "Do you guys do teeth whitening?"
+Agent: "Yes, we do! We offer both in-office whitening and take-home
+kits. In-office sessions take about an hour and results are immediate.
+Would you like to book a consultation to see which option is right
+for you?"
+
+Customer: "How much does a filling cost?"
+Agent: "The cost depends on the type of filling and your insurance
+coverage. With most insurance plans, fillings are partially or fully
+covered. I'd recommend booking a quick exam so our dentist can give
+you an exact quote. Want me to help you find a time?"
+
+Customer: "I'm in a lot of pain right now"
+Agent: "I'm sorry to hear that. If this is a medical emergency,
+please call 911 or go to your nearest emergency room. For urgent
+dental issues, call us directly at (905) 555-0123 and we will get
+you in as soon as possible today."
+```
+
+<Tip>
+Pay attention to the pattern in these examples. The agent answers the question, adds helpful context, and then moves toward an action. That pattern is what the agent will learn from.
+</Tip>
+
+---
+
+## Starter Template
+
+Copy this template and fill in the blanks. It is designed to get you to a solid system prompt in under 10 minutes.
+
+```
+You are [Agent Name], a [friendly/professional/casual] customer
+[support assistant/booking agent/sales assistant] for [Business Name].
+
+About the business:
+[Business Name] is a [type of business] located in [City, Province/State].
+We are open [hours]. We offer [main services or products].
+
+Your goals:
+1. Answer customer questions accurately using your knowledge base
+2. [Primary conversion goal, e.g., "Book appointments" or "Collect
+   their email for a quote"]
+3. If you cannot help, [escalation action, e.g., "offer to connect
+   them with our team at (555) 123-4567"]
+
+Rules:
+- Never make up information you are not sure about
+- Never discuss competitors
+- Never [industry-specific restriction, e.g., "provide medical
+  advice" or "guarantee delivery dates"]
+- Keep responses concise and conversational
+
+Transfer to a human when:
+- The customer asks to speak with a person
+- The customer is visibly frustrated or upset
+- The question is about [sensitive topic, e.g., "billing disputes"
+  or "legal matters"]
+
+Style:
+- Tone: [warm and casual / professional and polished / friendly
+  but concise]
+- Length: [1-2 sentences / 2-3 sentences / detailed paragraphs]
+- Language: Respond in whatever language the customer uses
+```
+
+---
+
+## Common Mistakes
+
+<AccordionGroup>
+  <Accordion title="Being too vague">
+    Prompts like "be helpful and answer questions" give the agent almost nothing to work with. The more specific you are, the better the responses.
+
+    Instead of "be professional," say "respond like a polished hotel concierge: warm, helpful, and never rushed."
+  </Accordion>
+
+  <Accordion title="Writing too much">
+    A system prompt is not a company handbook. If it is longer than a page, you have probably included information that belongs in your knowledge base instead. The system prompt is for behavior and personality. The knowledge base is for facts and details.
+  </Accordion>
+
+  <Accordion title="Forgetting to say what NOT to do">
+    Business owners spend all their time describing what the agent should do and forget the boundaries. The agent does not know your industry norms. If you do not want it quoting prices from memory, promising next-day delivery, or diagnosing medical conditions, you need to say so explicitly.
+  </Accordion>
+
+  <Accordion title="Contradicting yourself">
+    Watch out for conflicting instructions like "keep responses short" and then later "always provide detailed explanations." The agent will try to follow both and end up doing neither well. Read your prompt once through and check for any instructions that pull in opposite directions.
+  </Accordion>
+
+  <Accordion title="Skipping examples">
+    A business owner might write five paragraphs of instructions that could be replaced by three good example conversations. Examples are the fastest way to shape behavior. When in doubt, show instead of tell.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Industry-Specific Tips
+
+<Tabs>
+  <Tab title="Healthcare & Dental">
+    - Always include a disclaimer that the agent cannot provide medical advice or diagnoses
+    - Add escalation rules for emergencies (direct them to 911 or your emergency line)
+    - Mention PHIPA/HIPAA considerations: the agent should not ask for or store health card numbers in chat
+    - Focus conversation goals on booking consultations rather than answering clinical questions
+  </Tab>
+  <Tab title="Home Services">
+    - Tell the agent to always collect the customer's address and a description of the issue
+    - Set boundaries around pricing: "provide estimates from the knowledge base only, never guess"
+    - Add rules for emergency situations (burst pipes, gas leaks) with escalation to your dispatch line
+    - Include service area boundaries so the agent does not book jobs outside your coverage zone
+  </Tab>
+  <Tab title="Restaurants & Food">
+    - Include your hours, location, and whether you take reservations or are walk-in only
+    - Allergen handling: "if a customer asks about allergens, direct them to speak with our staff directly, do not guess"
+    - Set clear rules about order modifications and refund requests
+    - Tell the agent your delivery radius or which platforms you are on (UberEats, DoorDash, etc.)
+  </Tab>
+  <Tab title="E-commerce & Retail">
+    - Include your return and exchange policy as a boundary rule, not just in the knowledge base
+    - Add rules for out-of-stock situations: suggest alternatives or offer to notify when back in stock
+    - Set expectations around shipping: "only quote shipping times from the knowledge base, never promise specific dates"
+    - Goal should include capturing email if the customer is browsing but not ready to buy
+  </Tab>
+</Tabs>
+
+---
+
+## Testing and Improving Your Prompt
+
+Your first system prompt will not be perfect, and that is completely fine. Here is how to improve it over time:
+
+1. **Test it yourself first.** Open your agent and pretend to be a customer. Ask the kinds of questions your real customers ask. Note where the agent stumbles.
+
+2. **Check your conversation logs.** After your agent has been live for a few days, review the transcripts in your Beni dashboard. Look for conversations where the agent gave a wrong answer, went off-topic, or missed an opportunity to book or convert.
+
+3. **Fix one thing at a time.** When you spot a problem, add a specific instruction or example to address it. Do not rewrite the whole prompt. Small, targeted edits are easier to test and less likely to break something that was already working.
+
+4. **Ask yourself: could an example fix this?** If the agent keeps handling a certain type of question poorly, adding an example conversation for that exact scenario is usually more effective than adding another rule.
+
+<Tip>
+Treat your system prompt like a living document. The best-performing agents are the ones whose owners check in every few weeks, read through recent conversations, and make small tweaks based on what they see.
+</Tip>
+
+---
+
+## Quick Reference Checklist
+
+Before you publish your agent, make sure your system prompt covers:
+
+<Steps>
+  <Step title="Identity">
+    Does the agent have a name, role, and clear personality?
+  </Step>
+  <Step title="Business Context">
+    Does it know your business name, location, hours, and core services?
+  </Step>
+  <Step title="Goals">
+    Does it know what a successful conversation looks like?
+  </Step>
+  <Step title="Boundaries">
+    Have you told it what it should never do?
+  </Step>
+  <Step title="Escalation">
+    Does it know when to hand off to a human?
+  </Step>
+  <Step title="Style">
+    Have you defined tone, length, and language preferences?
+  </Step>
+  <Step title="Examples">
+    Have you included at least 3 example conversations?
+  </Step>
+</Steps>
