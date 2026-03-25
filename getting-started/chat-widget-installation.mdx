@@ -1,0 +1,270 @@
+---
+title: "Chat Widget Installation"
+description: "Add the Beni AI chat widget to your website in under 5 minutes. Step-by-step instructions for WordPress, Shopify, Wix, Squarespace, Webflow, and custom sites."
+icon: "code"
+---
+
+## How It Works
+
+Installing the Beni chat widget is like adding a Google Analytics snippet to your site. You copy a small piece of code from your dashboard and paste it into your website. That is it. The widget loads on its own, does not slow down your site, and starts working immediately.
+
+No developer needed. If you have ever pasted a tracking code or embedded a YouTube video on your site, you can do this.
+
+---
+
+## Find Your Embed Code
+
+Log in to your Beni workspace and go to **Agents → Select Agent → Chat Widget**. You will see a code snippet that looks like this:
+
+```html
+<script
+  src="https://widget.trybeni.ai/widget/latest/beni.iife.js"
+  data-agent-id="YOUR_AGENT_ID"
+  data-publishable-key="YOUR_PUBLISHABLE_KEY"
+  defer
+></script>
+```
+
+Copy this snippet. 
+- `data-agent-id` value is already filled 
+- For `data-publishable-key`, You need to get publishable key from `Settings → Developers → Publishable Keys ` page.
+
+<Note>
+Your publishable key is safe to include on your website. It is not a secret key. It only allows the widget to connect to your specific agent and cannot be used to access your workspace or modify your account. Publishable keys also control which domains are allowed to load your widget — make sure your site's domain is added under **Settings → Developers → Publishable Keys**.
+</Note>
+
+---
+
+## Platform Instructions
+
+Pick your website platform below and follow the steps. If your platform is not listed, scroll down to the **Custom / Other Platforms** section.
+
+<Tabs>
+  <Tab title="WordPress">
+    There are a few ways to do this. Pick whichever feels most comfortable.
+
+    **Option A: Using a plugin (easiest)**
+
+    1. In your WordPress dashboard, go to **Plugins → Add New**
+    2. Search for and install **WPCode** (or any "header and footer code" plugin)
+    3. Go to **Code Snippets → Header & Footer**
+    4. Paste your Beni embed code in the **Footer** section
+    5. Save
+
+    The widget will now appear on every page of your site.
+
+    **Option B: Using the theme editor**
+
+    1. Go to **Appearance → Theme File Editor**
+    2. Open **footer.php** from the right sidebar
+    3. Paste your embed code just before the `</body>` tag
+    4. Click **Update File**
+
+    **Option C: Single page only**
+
+    If you only want the widget on a specific page:
+
+    1. Edit the page in the block editor
+    2. Add a **Custom HTML** block
+    3. Paste your embed code
+    4. Publish
+
+    <Note>
+    If you are using a block theme like Twenty Twenty-Four, you may not have a footer.php file. Use the plugin method instead.
+    </Note>
+  </Tab>
+  <Tab title="Shopify">
+    1. From your Shopify admin, go to **Online Store → Themes**
+    2. Click the three dots on your active theme and select **Edit code**
+    3. In the left sidebar under **Layout**, click **theme.liquid**
+    4. Scroll to the bottom and find the `</body>` tag
+    5. Paste your embed code just before `</body>`
+    6. Click **Save**
+
+    The widget will appear on every page of your store including product pages, collections, and checkout.
+
+    <Tip>
+    Want the widget only on certain pages? Wrap the snippet in a Liquid conditional. For example, to show it only on product pages:
+
+    ```html
+    {% if template contains 'product' %}
+      <script
+        src="https://widget.trybeni.ai/widget/latest/beni.iife.js"
+        data-agent-id="YOUR_AGENT_ID"
+        data-publishable-key="YOUR_PUBLISHABLE_KEY"
+        defer
+      ></script>
+    {% endif %}
+    ```
+    </Tip>
+  </Tab>
+  <Tab title="Wix">
+    1. In your Wix dashboard, go to **Settings → Custom Code** (under the Advanced section)
+    2. Click **Add Code**
+    3. Paste your Beni embed code
+    4. Set the following:
+       - **Name:** Beni Chat Widget
+       - **Add Code to Pages:** All pages
+       - **Place Code in:** Body - end
+    5. Click **Apply**
+
+    <Warning>
+    Do not use the Wix "HTML Embed" component on a page. It renders your code inside an iframe, which prevents the widget from floating over your page content. Always use the Custom Code method described above.
+    </Warning>
+
+    <Note>
+    Custom code injection on Wix requires a **Premium plan**. If you are on a free Wix plan, you will need to upgrade before you can add the widget.
+    </Note>
+  </Tab>
+  <Tab title="Squarespace">
+    1. In your Squarespace dashboard, go to **Settings → Advanced → Code Injection**
+    2. Paste your embed code in the **Footer** field
+    3. Click **Save**
+
+    The widget will appear on every page of your site.
+
+    <Note>
+    Code injection is only available on **Business plan and above**. If you are on a Personal plan, you will need to upgrade to add the widget.
+    </Note>
+  </Tab>
+  <Tab title="Webflow">
+    1. In your Webflow project, go to **Project Settings → Custom Code**
+    2. Paste your embed code in the **Footer Code** section
+    3. Click **Save Changes**
+    4. **Publish** your site for the changes to go live
+
+    <Tip>
+    If you want the widget on specific pages only, go to that page's settings and paste the code in the page-level **Before `</body>` tag** field instead of the project-level footer.
+    </Tip>
+  </Tab>
+  <Tab title="Custom / Other">
+    If you are running a static site, a site built with a page builder, or any platform not listed above, the process is the same everywhere: paste the embed code before the closing `</body>` tag in your HTML.
+
+    ```html
+    <body>
+      <!-- Your website content -->
+
+      <!-- Beni Chat Widget -->
+      <script
+        src="https://widget.trybeni.ai/widget/latest/beni.iife.js"
+        data-agent-id="YOUR_AGENT_ID"
+        data-publishable-key="YOUR_PUBLISHABLE_KEY"
+        defer
+      ></script>
+    </body>
+    ```
+
+    If your site uses a templating system (EJS, Handlebars, Jinja, Blade, etc.), add the snippet to your base layout template so it loads on every page.
+  </Tab>
+</Tabs>
+
+---
+
+## Google Tag Manager
+
+If you manage all your website scripts through Google Tag Manager, you can add Beni there instead.
+
+1. In GTM, click **Tags → New**
+2. Choose **Custom HTML** as the tag type
+3. Paste your Beni embed code
+4. Set the trigger to **All Pages**
+5. Save and **Publish** the container
+
+---
+
+## For Developers: Single-Page Applications
+
+If your site is built with a JavaScript framework, add the script to your app shell or layout component.
+
+<Tabs>
+  <Tab title="Next.js">
+    ```jsx
+    // app/layout.tsx
+    import Script from 'next/script'
+
+    export default function RootLayout({ children }) {
+      return (
+        <html>
+          <body>
+            {children}
+            <Script
+              src="https://widget.trybeni.ai/widget/latest/beni.iife.js"
+              data-agent-id="YOUR_AGENT_ID"
+              data-publishable-key="YOUR_PUBLISHABLE_KEY"
+              strategy="lazyOnload"
+            />
+          </body>
+        </html>
+      )
+    }
+    ```
+  </Tab>
+  <Tab title="React (Vite / CRA)">
+    Add the script tag directly to your `index.html` file before `</body>`. No React component needed.
+  </Tab>
+  <Tab title="Vue / Nuxt">
+    For **Nuxt**, add the script to `nuxt.config.ts` under `app.head.script`. For a plain **Vue** project, add it to `index.html` before `</body>`.
+  </Tab>
+</Tabs>
+
+---
+
+## Verify It Is Working
+
+After adding the code:
+
+<Steps>
+  <Step title="Open your website">
+    Visit your site in a new browser tab. Use an incognito window if you want to avoid caching issues.
+  </Step>
+  <Step title="Look for the chat icon">
+    You should see the Beni chat icon in the bottom-right corner of your page.
+  </Step>
+  <Step title="Send a test message">
+    Click the icon and send a message. If your agent has a knowledge base set up, it should respond based on your business content.
+  </Step>
+</Steps>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Widget is not appearing">
+    Clear your browser cache or open the site in an incognito window. Confirm the snippet is placed before the closing `</body>` tag, not inside `<head>`. Double-check that your `data-agent-id` and `data-publishable-key` values have no extra spaces or missing characters. On Wix and Squarespace, verify you are on a plan that supports custom code injection.
+  </Accordion>
+  <Accordion title="Widget appears but the agent does not respond">
+    Make sure your agent has a published knowledge base in the Beni dashboard. Open your browser console (press F12, then click the Console tab) and check for any error messages. If you see a 401 or 403 error, your publishable key may be incorrect.
+  </Accordion>
+  <Accordion title="Widget overlaps with another chat tool">
+    If you have another chat widget installed (Intercom, Drift, Tidio, etc.), it may overlap with Beni. Remove the other widget's embed code, or adjust the Beni widget position in **Agents → Select Agent → Chat Widget**.
+  </Accordion>
+  <Accordion title="Widget is blocked on my domain">
+    Publishable keys control which domains are permitted to load your widget. If the widget loads on localhost but not on your live site, go to **Settings → Developers → Publishable Keys**, select your key, and add your site's domain to the allowed list. Open the browser console and look for a 403 error if you are unsure whether this is the cause.
+  </Accordion>
+  <Accordion title="Widget looks broken or unstyled">
+    Some WordPress themes and Shopify themes have aggressive global CSS that can interfere with third-party widgets. If the widget looks off, reach out to us and we will help you sort it out.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Customization
+
+You do not need to touch any code to customize the widget. Everything is managed from your Beni dashboard under **Agents → Select Agent → Chat Widget**:
+
+- **Widget color** to match your brand
+- **Chat Widget First Message** that greets visitors when they open the chat
+- **Bubble Text** — a short label that appears attached to the widget bubble to invite visitors to click
+
+Changes apply automatically. No need to update your embed code.
+
+<Tip>
+Set a first message that tells visitors what the agent can help with. Something like "Hi! I can answer questions about our services, help you book an appointment, or connect you with our team." gives people a clear reason to start chatting.
+</Tip>
+
+---
+
+## Need Help?
+
+If you get stuck or would prefer a hands-off setup, email us at [support@trybeni.ai](mailto:support@trybeni.ai) and we will install the widget on your site for you. No charge, no hassle.
