@@ -14,16 +14,16 @@ At the top of the Dashboard, four key metrics give you an instant pulse on your 
 
 <CardGroup cols={2}>
   <Card title="Active Agents" icon="robot">
-    The number of agents currently active out of your total configured agents.
+    The number of agents currently active out of your total configured agents (e.g. **1/1**).
   </Card>
   <Card title="Conversations" icon="message">
-    Total number of conversations handled by your agents in the selected time period.
+    Total number of conversations handled by your agents in the selected time period. Includes a week-over-week comparison to show growth or decline.
   </Card>
-  <Card title="Resolution Rate" icon="circle-check">
-    The percentage of conversations successfully resolved by your agents without requiring a human handoff.
+  <Card title="Autonomously Resolved" icon="circle-check">
+    The percentage of conversations resolved by your agents without a human handoff, along with the raw count (e.g. **7 of 7 resolved**).
   </Card>
-  <Card title="Avg Resolution Time" icon="clock">
-    The average time it takes for your agents to fully resolve a conversation.
+  <Card title="Leads Captured" icon="bullseye">
+    Total number of leads captured by your agents in the selected time period. Includes a week-over-week comparison.
   </Card>
 </CardGroup>
 
@@ -37,11 +37,16 @@ Use this chart to spot trends — peak hours, quiet periods, or spikes that may 
 
 The Leads section surfaces the most recent inbound leads captured by your agents. Each lead shows:
 
-- **Source** — which agent or channel the lead came from
+- **Name** — the visitor's name or "Website Visitor" if unknown
+- **Summary** — a brief description of the lead's intent (e.g. "The customer explicitly requested to book a call and provided contact details")
 - **Temperature** — `HOT` or `WARM` based on the lead's intent and engagement level
 - **Time** — how recently the lead came in
 
-Click any lead to view the full conversation and contact details.
+Click **View all** to see the full leads list, or click any individual lead to view the full conversation and contact details.
+
+## Conversation Topic Breakdown
+
+The Conversation Topic Breakdown chart shows how conversations are distributed across different topics (e.g. Booking, Support, General). This helps you understand what your visitors are most commonly asking about.
 
 ## Quick Action
 
