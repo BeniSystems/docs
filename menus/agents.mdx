@@ -60,7 +60,22 @@ Give your agent the ability to perform actions and access external systems. Only
 
 <Tip>You can filter by tool type using the **All Types** dropdown to quickly find API tools or integrations.</Tip>
 
-### Step 6 — Chat Widget
+### Step 6 — Escalation
+
+Configure where to notify when a user requests a human agent.
+
+**Use global notification settings** — when enabled, this agent inherits the organization-wide escalation settings configured in **Settings → Notifications**. No further configuration is needed on the agent.
+
+When disabled, you can configure agent-specific escalation settings:
+
+| Option | Description |
+|--------|-------------|
+| **Enable email notifications** | Send an email alert when this agent escalates to a human |
+| **Recipient Emails** | Add up to 10 email addresses to notify on escalation. Use **+ Add email** to add more recipients |
+
+<Info>To configure organization-wide escalation defaults, go to **Settings → Notifications**.</Info>
+
+### Step 7 — Chat Widget
 
 Customize the chat widget that appears on your website.
 
@@ -79,7 +94,7 @@ Click **Create Agent** in the top right to finish and save your agent.
 
 ## Updating an Agent
 
-To edit an existing agent, click on it from the Agents list. The page opens as **Configure Agent** with all the same steps as creation. All settings are identical except for one addition in the Chat Widget step.
+To edit an existing agent, click on it from the Agents list. The page opens as **Configure Agent** with all the same steps as creation. All settings are identical — including the Escalation step — except for one addition in the Chat Widget step.
 
 When you're done making changes, click **Save Changes** in the top right to save. You can also click **Preview Widget** to see how your chat widget looks before saving.
 
