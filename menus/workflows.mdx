@@ -1,0 +1,156 @@
+---
+title: 'Workflows'
+description: 'Build multi-step automations that agents can trigger as tools, or run manually'
+icon: 'diagram-project'
+---
+
+Workflows let you build multi-step automations that your agents can trigger as tools during a conversation, or that you can run manually. Each workflow is a sequence of connected blocks — actions like sending a Slack message, calling an HTTP endpoint, or sending an email — executed in order.
+
+Workflows is found under the **Automations** section in the left navigation menu, alongside **Tools & Integrations**.
+
+---
+
+## Overview
+
+The Workflows page shows a summary of all your workflows:
+
+| Metric | Description |
+|--------|-------------|
+| **Total** | Total number of workflows created |
+| **Published** | Workflows that are live and callable by agents |
+| **Drafts** | Workflows saved but not yet published |
+| **Archived** | Workflows that have been archived |
+
+You can search workflows by name, description, or slug, and filter by status (All, Published, Drafts, Archived). Each workflow card shows its name, description, number of steps, timeout setting, and when it was last updated.
+
+---
+
+## Creating a Workflow
+
+Click **+ New Workflow** to open the creation dialog.
+
+| Field | Description |
+|-------|-------------|
+| **Name** | A descriptive name for the workflow. e.g. `Notify sales on lead capture` |
+| **Description** | *(Optional)* Describes what the workflow does. When a workflow is assigned to an agent, this description is used as the tool description so the agent knows when to trigger it. |
+
+Click **Create** to open the workflow builder.
+
+---
+
+## Workflow Builder
+
+The builder is a visual canvas where you connect blocks to define the steps of your workflow.
+
+### Layout
+
+- **Left panel — Blocks**: Drag a block onto the canvas, or click it to add it. These are the available step types.
+- **Canvas**: The visual graph of your workflow. Connect blocks by linking their output and input ports.
+- **Right panel — Configuration**: When a block is selected on the canvas, its settings appear here for editing.
+
+### Trigger and Terminate
+
+Every workflow has two fixed nodes:
+
+| Node | Description |
+|------|-------------|
+| **Start** (Trigger) | The entry point of the workflow. Execution begins here. |
+| **End** (Terminate) | The exit point. When reached, the workflow stops and returns its output. |
+
+### Available Blocks
+
+| Block | Description |
+|-------|-------------|
+| **Slack** | Post a message via a Slack incoming webhook |
+| **Teams** | Post a message via a Microsoft Teams webhook |
+| **Email** | Send a transactional email |
+| **HTTP** | Call any HTTP endpoint |
+
+<Info>More integrations and block types are coming soon.</Info>
+
+### Configuring a Block
+
+Click any block on the canvas to configure it in the right panel. The fields shown depend on the block type. For example, the **Slack** block exposes:
+
+- **Webhook URL** — the Slack incoming-webhook URL (encrypted at rest)
+- **Message** — the message text. Supports `{{ inputs.x }}` to reference workflow inputs and `{{ steps.<id>.output.y }}` to reference outputs from previous steps.
+- **Username** *(optional)* — the display name the message posts as
+- **Icon emoji** *(optional)* — the emoji icon for the message, e.g. `:robot_face:`
+
+### Inputs
+
+Workflow inputs become tool parameters when an agent triggers the workflow. Click **+ Add** in the Inputs panel (top-right) to define input fields. Reference them in block configurations using `{{ inputs.<name> }}`.
+
+<Note>Branching (conditional logic) is not yet supported but is coming soon.</Note>
+
+---
+
+## Publishing a Workflow
+
+Use the top toolbar to manage the workflow lifecycle:
+
+| Action | Description |
+|--------|-------------|
+| **Save** | Save changes without publishing |
+| **Publish** | Make the workflow live and available to agents |
+| **Test Run** | Run the workflow manually in test mode to verify it works |
+| **Runs** | Open the execution history for this workflow |
+
+---
+
+## Execution History
+
+Click **Runs** in the workflow builder toolbar, or navigate to the workflow's runs page, to view its full execution history.
+
+### Summary Metrics
+
+| Metric | Description |
+|--------|-------------|
+| **Total runs** | Total number of times the workflow has been executed |
+| **Successful** | Runs that completed without error |
+| **Failed** | Runs that encountered an error |
+| **Avg duration** | Average execution time across all runs |
+
+### Run List
+
+Each row in the run list shows:
+
+- **Status** — Success, Failed, Running, Queued, Cancelled, or Timeout
+- **Trigger** — How the run was initiated: `manual` (Test Run) or `agent_tool` (triggered by an agent during a conversation)
+- **Mode** — `Test` or `Live`
+- **Started** — When the run began
+- **Duration** — How long the run took
+- **Run ID** — A unique identifier for the run
+
+You can filter runs by status and mode, and search by run ID, trigger, or error.
+
+### Run Details
+
+Click any run row to view its full details:
+
+- **Trigger**, **Total duration**, **Started**, and **Finished** timestamps
+- **Inputs** — the input values passed to the workflow for that run
+- **Output** — the final output returned by the workflow
+
+#### Step Execution Log
+
+Each step in the workflow is listed with its status, step ID, and duration. Click a step to expand it and inspect its individual inputs, outputs, and any error details.
+
+<Info>When a workflow is triggered by an agent during a conversation, the execution is also visible in the Conversation detail view.</Info>
+
+---
+
+## Assigning Workflows to Agents
+
+Workflows can be assigned to agents so that agents can trigger them as tools during conversations.
+
+To assign a workflow:
+
+1. Go to **Agents** and open an existing agent, or create a new one.
+2. Navigate to the **Tools & Workflows** step in the agent setup.
+3. Under **Workflows**, check the workflows you want to enable for that agent.
+4. Save or publish the agent.
+
+The workflow's description is used as the tool description — the agent reads it to decide when to trigger the workflow. Published workflows with clear descriptions work best.
+
+<Note>Only **Published** workflows appear in the agent's Tools & Workflows section.</Note>

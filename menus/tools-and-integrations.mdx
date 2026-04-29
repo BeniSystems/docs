@@ -6,12 +6,14 @@ icon: 'grid-2-plus'
 
 Tools give your agents the ability to take actions — look up data, submit forms, book appointments, and more — by calling external APIs during a conversation.
 
+Tools & Integrations is found under the **Automations** section in the left navigation menu, alongside **Workflows**.
+
 ## Overview
 
 The Tools & Integrations page is split into two tabs:
 
 - **Tools** — API tools your agents can call during conversations
-- **Integrations** — third-party app connections <span style={{ background: '#FEF3C7', color: '#92400E', fontSize: '12px', padding: '2px 8px', borderRadius: '999px', marginLeft: '6px' }}>Coming Soon</span>
+- **Integrations** — pre-built connections to third-party apps
 
 The Tools tab shows four summary metrics:
 
@@ -164,4 +166,30 @@ Webhook-based tools are **coming soon**. They will allow external systems to pus
 
 ## Integrations
 
-Native third-party integrations are **coming soon**. They will provide pre-built connections to tools like Salesforce, HubSpot, Zendesk, and calendar systems.
+The Integrations tab provides pre-built connections to third-party apps. Once connected, the integration's tools are automatically available to assign to your agents.
+
+The tab shows three summary metrics:
+
+| Metric | Description |
+|--------|-------------|
+| **Connected** | Integrations you have successfully connected |
+| **Available** | Integrations available to connect |
+| **Total** | Total integrations (connected + available) |
+
+You can search integrations and filter by **Connected** or **Available**.
+
+### Calendly
+
+Connect Calendly to let your agents check availability and book meetings on your behalf.
+
+**Tools included:**
+
+| Tool | Description |
+|------|-------------|
+| `calendly_list_event_types` | List the event types available on your Calendly account |
+| `calendly_check_availability` | Check available time slots for a given event type |
+| `calendly_book_meeting` | Book a meeting through Calendly |
+
+Click **Connect** on the Calendly card to link your Calendly account. Once connected, assign the Calendly tools to an agent from the agent's **Tools & Workflows** settings.
+
+<Info>More integrations are coming soon.</Info>

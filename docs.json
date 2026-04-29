@@ -37,7 +37,13 @@
               "menus/knowledge-base",
               "menus/conversations",
               "menus/leads",
-              "menus/tools-and-integrations",
+              {
+                "group": "Automations",
+                "pages": [
+                  "menus/tools-and-integrations",
+                  "menus/workflows"
+                ]
+              },
               {
                 "group": "Settings",
                 "pages": [
